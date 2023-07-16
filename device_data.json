@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "name": "My Mobile",
+        "ip": "192.168.29.118"
+    },
+    {
+        "id": 2,
+        "name": "Anshuman's Laptop",
+        "ip": "192.168.1.155"
+    },
+    {
+        "id": 3,
+        "name": "Sushil's Laptop",
+        "ip": "192.168.0.142"
+    }
+]
