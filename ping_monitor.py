@@ -16,7 +16,11 @@ def main() -> None:
     device_availability_data_filename: str = "device_availability_data.csv"
     device_data_management: DeviceDataManagement = DeviceDataManagement(device_data_filename,
                                                                         device_availability_data_filename)
-    try:
+    if len(sys.argv) == 1:
+        while True:
+            device_data_management.ping_all_devices()
+            time.sleep(300)
+    else:
         command: str = sys.argv[1]
         match command:
             case "list-devices":
@@ -50,10 +54,6 @@ def main() -> None:
                     print(device_data_management.device_id_not_provided)
             case _:
                 print("UNKNOWN COMMAND")
-    except IndexError:
-        while True:
-            device_data_management.ping_all_devices()
-            time.sleep(300)
 
 
 main()

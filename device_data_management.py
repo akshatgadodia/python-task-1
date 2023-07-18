@@ -202,16 +202,15 @@ class DeviceDataManagement:
         Return:
             None
         """
-        if device_name == "" or device_ip == "":
-            print(self.device_name_ip_not_provided)
-            return
         devices_data: list[dict] = self.load_device_data_file()
         device_index: int = self.__get_device_index(device_id)
         if device_index == -1:
             print(self.device_not_found_message)
             return
-        devices_data[device_index]["name"] = device_name
-        devices_data[device_index]["name"] = device_ip
+        if device_name != "":
+            devices_data[device_index]["name"] = device_name
+        if device_ip != "":
+            devices_data[device_index]["ip"] = device_ip
         self.save_device_data_file(devices_data)
         print(self.device_updated_successfully)
 
