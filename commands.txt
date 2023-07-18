@@ -1,0 +1,14 @@
+# Command to print all devices details
+python ping_monitor.py list-devices
+
+# Command to print device details by id
+python ping_monitor.py list-device <device_id>
+
+# Command to add a new device
+python ping_monitor.py add-device
+
+# Command to delete device details by id
+python ping_monitor.py delete-device <device_id>
+
+# Command to update device details by id
+python ping_monitor.py update-device <device_id>
